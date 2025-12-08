@@ -34,7 +34,7 @@
 
         /* 텍스트 강조를 위한 클래스 */
         .text-highlight {
-            color: #ffd700; /* 황금색 강조 */
+            color: #00ADB5; /* 청록색으로 변경 (대비 향상 및 세련된 느낌) */
             font-weight: 700;
         }
         
@@ -75,7 +75,7 @@
         ====================================================================== */
 		.hero {
 			/* [수정] 배경 이미지가 잘리지 않고 전체가 보이도록 설정 */
-			background-image: url('snu.png'); 
+			background-image: url('imges/snu.png'); 
 			background-size: contain; /* 이미지가 잘리지 않고 전체가 보이도록 설정 */
 			background-position: center center;
 			background-repeat: no-repeat; /* 반복 방지 */
@@ -192,12 +192,12 @@
             left: 0;
             width: 5px;
             height: 100%;
-            background: linear-gradient(180deg, #800040 0%, #58002d 100%);
+            background: linear-gradient(180deg, #6A1A22 0%, #501319 100%); /* 버건디 계열로 변경 */
             border-radius: 12px 0 0 12px;
         }
         
         .problem-card h3 {
-            color: #800040;
+            color: #6A1A22; /* 버건디 계열로 변경 */
             font-size: 1.4em;
             margin-bottom: 15px;
         }
@@ -209,8 +209,8 @@
 
         /* 문제점 섹션 SVG 아이콘 색상 */
         .problem-card svg circle, .problem-card svg line, .problem-card svg path {
-            stroke: #800040;
-            fill: #800040;
+            stroke: #6A1A22; /* 버건디 계열로 변경 */
+            fill: #6A1A22; /* 버건디 계열로 변경 */
         }
         .problem-card svg path[fill="none"] {
             fill: none;
@@ -324,14 +324,73 @@
         }
         
         .credential-item h4 {
-            color: #ffd700; /* 황금색으로 강조 */
+            color: #00ADB5; /* 청록색으로 변경 */
         }
 
         /* ======================================================================
-        | Results Section (결과)
+        | Results Section (결과) - New Styles for List
         ====================================================================== */
         .results-box h3 {
             color: #1e3c72;
+        }
+
+        /* Result List Styles */
+        .success-list-container {
+            margin-top: 50px;
+            padding: 40px 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .list-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #1e3c72;
+        }
+
+        .name-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-column {
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .achievement-column h4 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #2c5aa0;
+            border-bottom: 2px solid #f0f7ff;
+            padding-bottom: 5px;
+        }
+
+        .name-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        .name-list li {
+            font-size: 1em;
+            margin-bottom: 5px;
+            color: #555;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .name-list li::before {
+            content: '⭐';
+            position: absolute;
+            left: 0;
+            font-size: 0.8em;
+            color: #00ADB5; /* 청록색으로 변경 */
         }
 
         /* ======================================================================
@@ -342,7 +401,7 @@
         }
         
         .contact-item p {
-            color: #ffd700;
+            color: #00ADB5; /* 청록색으로 변경 */
         }
         
         .cta-button {
@@ -393,11 +452,6 @@
                 line-height: 1.4;
             }
             
-            .name-list {
-                column-count: 1;
-                font-size: 0.9em;
-            }
-            
             .results-grid {
                 grid-template-columns: 1fr;
             }
@@ -405,17 +459,29 @@
             .cta-button {
                 width: 100%;
             }
-            /* ... 나머지 미디어 쿼리 코드 유지 ... */
+            
+            /* 모바일에서 결과 리스트 스타일 조정 */
+            .success-list-container {
+                padding: 20px;
+            }
+
+            .name-list-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-cards {
+                grid-template-columns: 1fr; /* 모바일에서 1열로 표시 */
+            }
         }
     </style>
 </head>
 <body>
     <div class="hero">
         <div class="container">
-            <h1>부산 용호동, 당신의 자녀가<br>'<span class="text-highlight">최상위 1%</span>'가 되는 입시 로드맵</h1>
+            <h1>부산 용호동 4인 정원 프리미엄 과외,<br>'<span class="text-highlight">최상위 1%</span>'가 되는 입시 로드맵</h1>
             <p class="subtitle"><span class="text-highlight">서울대 출신 원장</span>의 <span class="text-highlight">15년 입시 코칭 노하우</span></p>
             <div class="highlight">
-                **[마감 임박]** 총 36명 한정, 단 9개 클래스에서만 경험할 수 있습니다
+                <span class="text-highlight">[마감 임박]</span> 총 36명 한정, 단 9개 클래스에서만 경험할 수 있습니다
             </div>
             
             <div class="stats">
@@ -438,28 +504,67 @@
     <div class="section problem-section">
         <div class="container">
             <h2 class="section-title">왜 학원을 다녀도 '진짜 실력'이 오르지 않을까?</h2>
-            <p class="section-subtitle">대부분의 학생과 학부모가 겪는 3가지 구조적 문제</p>
+            <p class="section-subtitle">명문대 합격을 막는, 대부분의 학생과 학부모가 겪는 <span class="text-highlight">5가지 구조적 문제</span></p>
             
             <div class="problem-cards">
                 <div class="problem-card">
                     <div class="icon-wrapper">
-                        </div>
-                    <h3>① 대형 학원의 '방치 학습'</h3>
-                    <p>20~30명 이상의 학생을 한 번에 가르치다 보니 개별 학생의 <span class="text-highlight">취약점을 파악하고 해결할 시간이 부족</span>합니다. 결국 '평균적인 학생'을 위한 수업이 되고, 개인의 성장은 뒤처집니다.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#6A1A22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>① 대형 학원의 근본적 한계: 개별화의 부재</h3>
+                    <p>
+                        <span class="text-highlight">10명 이상</span>의 단체 수업 구조는 학생 개개인의 <span class="text-highlight">학습 격차와 취약점을 깊이 파악하지 못합니다.</span><br>
+                        수업은 필연적으로 <span class="text-highlight">'평균적인 학생'</span>을 기준으로 진행되어 뒤처지는 학생과 이미 아는 학생 모두 시간을 낭비합니다.<br>
+                        학생 개개인의 약점을 진단하고 <span class="text-highlight">맞춤 처방을 내릴 시간이 부족</span>하여, 오랜 시간 학원을 다녀도 <span class="text-highlight">성적이 정체</span>되는 핵심 원인입니다.
+                    </p>
                 </div>
                 
                 <div class="problem-card">
                     <div class="icon-wrapper">
-                        </div>
-                    <h3>② 시험 요령만 늘어나는 함정</h3>
-                    <p>단기 성적 향상에만 집중하여 <span class="text-highlight">문제 유형 암기와 요령만 가르치면</span>, 응용력이 떨어져 상위권 진입에 실패합니다. 진짜 실력이 아닌 '시험 기술'만 늘어나는 함정에 빠집니다.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#6A1A22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.8 0-1.5-.7-1.5-1.5v-5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v5c0 .8-.7 1.5-1.5 1.5z"></path><path d="M20 17.5c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-5c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v5z"></path><path d="M9.5 10c-.8 0-1.5-.7-1.5-1.5v-5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v5c0 .8-.7 1.5-1.5 1.5z"></path><path d="M12 21.5c-2.3 0-4.5-.4-6.5-1.2-1.2-.5-2.2-1.4-2.7-2.7-.5-1.3-.4-2.7-.4-4.5V11c0-2 .8-3.9 2.2-5.3L6.5 4"></path><path d="M12 21.5c2.3 0 4.5-.4 6.5-1.2 1.2-.5 2.2-1.4 2.7-2.7.5-1.3.4-2.7.4-4.5V11c0-2-.8-3.9-2.2-5.3L17.5 4"></path></svg>
+                    </div>
+                    <h3>② 임시방편 학습의 함정: 껍데기만 남는 공부</h3>
+                    <p>
+                        단기 성적 위주의 문제 유형 암기는 응용력을 키우지 못하며, <span class="text-highlight">근본적인 개념 이해와 논리적 사고력</span>을 방해합니다.<br>
+                        암기한 패턴이 통하지 않는 <span class="text-highlight">변형된 문제나 낯선 유형</span>이 나오면 속수무책이 되며, <span class="text-highlight">응용력 부족</span>으로 상위권 진입에 실패합니다.<br>
+                        이는 학년이 올라갈수록 격차가 기하급수적으로 벌어지게 만들어, <span class="text-highlight">시험 요령만으로는 안정적인 고득점 유지가 불가능</span>하게 만듭니다.
+                    </p>
                 </div>
                 
                 <div class="problem-card">
                     <div class="icon-wrapper">
-                        </div>
-                    <h3>③ 의지력이 아닌 '공부 체력' 부족</h3>
-                    <p>의지력만으로 공부하면 금방 지치고, <span class="text-highlight">공부 습관이 형성되지 않아</span> 장기적 성장이 어렵습니다. 결국 시간과 비용만 소모하고 목표에 도달하지 못합니다.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#6A1A22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7c0 1.66 1.34 3 3 3s3-1.34 3-3V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2c0 3.32-2.69 6-6 6s-6-2.68-6-6v-2"></path><line x1="12" y1="18" x2="12" y2="22"></line></svg>
+                    </div>
+                    <h3>③ 동기부여 시스템의 부재: 의지만으로는 버틸 수 없다</h3>
+                    <p>
+                        공부는 <span class="text-highlight">마라톤</span>과 같아, 처음의 의지력만으로는 버틸 수 없으며 <span class="text-highlight">지속적인 동기부여 시스템</span>이 필수적입니다.<br>
+                        <span class="text-highlight">구체적인 목표 설정, 작은 성취 경험, 그리고 지속적인 피드백</span>이 없으면 학생들은 쉽게 지치고 좌절감을 느끼기 쉽습니다.<br>
+                        무엇을, 언제, 어떻게 공부해야 할지 모르는 <span class="text-highlight">불안정한 학습 습관</span>은 시간과 비용 투자 대비 <span class="text-highlight">뚜렷한 성과를 내지 못하게</span> 만듭니다.
+                    </p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#6A1A22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+                    </div>
+                    <h3>④ 학습 관리의 공백: 수업 후 방치되는 복습과 정착</h3>
+                    <p>
+                        대부분의 교육은 <span class="text-highlight">'수업'</span>에만 집중할 뿐, 학습의 핵심인 <span class="text-highlight">'복습과 정착 과정'</span>을 전적으로 학생 개인의 몫으로 남겨둡니다.<br>
+                        수업 후 체계적으로 반복 학습하지 않으면 배운 내용의 상당 부분이 <span class="text-highlight">장기 기억으로 전환되지 못하고 잊힙니다.</span><br>
+                        전체 학습 과정의 <span class="text-highlight">70%를 차지하는 복습, 문제 풀이, 오답 정리</span>가 제대로 관리되지 않으면 아무리 좋은 수업도 <span class="text-highlight">실력으로 연결되지 않습니다.</span>
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#6A1A22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H7l5 5-5 5h10"></path></svg>
+                    </div>
+                    <h3>⑤ 입시제도 변화에 따른 불안과 방향성 상실</h3>
+                    <p>
+                        잦은 입시제도 변화는 학생과 학부모에게 <span class="text-highlight">극심한 혼란과 불안감</span>을 야기하며, <span class="text-highlight">학습 전략이 수시로 바뀌게</span> 만듭니다.<br>
+                        불안한 정보와 루머에 휘둘려 <span class="text-highlight">일관된 방향을 유지하기 어렵고</span>, 정작 중요한 <span class="text-highlight">기본기를 다지는 데 집중하지 못합니다.</span><br>
+                        진정으로 필요한 것은 제도가 바뀌어도 흔들리지 않는 <span class="text-highlight">탄탄한 개념 이해, 논리적 사고력, 그리고 학습 습관</span>입니다.
+                    </p>
                 </div>
             </div>
         </div>
@@ -470,8 +575,9 @@
             <h2 class="section-title">IVY ENGLISH는 다릅니다</h2>
             <div class="solution-box">
                 <div class="icon-wrapper" style="margin-bottom: 30px;">
-                    </div>
-                <h3><span class="text-highlight">4인 정원 소수 정예</span> 시스템</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="4"></circle><path d="M15.54 13.99l-2.07 2.07M20 14v1a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-2"></path><path d="M18 10l-2.07 2.07M16 6l-2.07 2.07M14 2l-2.07 2.07"></path></svg>
+                </div>
+                <h3><span class="text-highlight">4인 정원 소수 정예</span> 시스템이 문제점을 해결합니다</h3>
                 <p>각 학생의 학습 상태를 <span class="text-highlight">정확히 진단</span>하고,<br>논리적 사고력과 공부 습관을 함께 길러<br>지속 가능한 성장을 만듭니다</p>
             </div>
         </div>
@@ -530,7 +636,8 @@
             <div class="comparison-grid">
                 <div class="comparison-card">
                     <div class="small-icon">
-                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#1e3c72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h0M12 4v16M5 13H1v4h4V13M19 13h4v4h-4V13"></path><path d="M5 20v-3a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"></path><path d="M19 20v-3a2 2 0 0 1-2-2h-4a2 2 0 0 1-2 2v3"></path></svg>
+                    </div>
                     <h3>1:1 과외보다 효과적</h3>
                     <ul>
                         <li>다른 학생의 질문을 들으며 <span class="text-highlight">사각지대 학습</span></li>
@@ -541,7 +648,8 @@
                 
                 <div class="comparison-card">
                     <div class="small-icon">
-                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#1e3c72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                    </div>
                     <h3>대형 학원보다 밀착</h3>
                     <ul>
                         <li>매 수업마다 <span class="text-highlight">개인별 진도 체크</span></li>
@@ -554,22 +662,43 @@
     </div>
 
     <div class="section curriculum-section">
+        <div class="container">
+            <h2 class="section-title">IVY ENGLISH <span class="text-highlight">프리미엄 학습 시스템</span></h2>
+            <p class="section-subtitle">개념-응용-습관까지 <span class="text-highlight">빈틈없는 3단계 관리</span>로 명문대 합격의 길을 엽니다.</p>
+            
+            <div class="curriculum-steps">
+                <div class="step-item">
+                    <h3>STEP 1: <span class="text-highlight">정밀 진단 및 개념 완성</span></h3>
+                    <p>서울대 출신 원장이 직접 학생의 <span class="text-highlight">현재 레벨과 학습 습관을 진단</span>합니다. <span class="text-highlight">4인 정원</span>에서 맞춤형으로 <span class="text-highlight">개념과 원리</span>를 완벽하게 이해시킵니다.</p>
+                </div>
+                <div class="step-item">
+                    <h3>STEP 2: <span class="text-highlight">논리 기반 응용력 강화</span></h3>
+                    <p>문제 풀이 요령이 아닌, <span class="text-highlight">논리와 구조를 파악하는 훈련</span>을 통해 응용력을 극대화합니다. 변형 문제에도 흔들리지 않는 <span class="text-highlight">진정한 실력</span>을 만듭니다.</p>
+                </div>
+                <div class="step-item">
+                    <h3>STEP 3: <span class="text-highlight">70% 복습 및 습관 코칭</span></h3>
+                    <p>수업 후 <span class="text-highlight">개인별 오답 정리, 체계적인 복습 루틴</span>을 1:1로 관리합니다. <span class="text-highlight">자기주도 학습 습관</span>을 완성하여 장기적인 성장을 보장합니다.</p>
+                </div>
+            </div>
         </div>
+    </div>
 
     <div class="section instructor-section">
         <div class="container">
             <h2 class="section-title">누가 가르치는가?</h2>
+			"교육의 질은 교사의 질을 넘을 수 없습니다"
             <div class="instructor-content">
                 <div style="text-align: center; margin-bottom: 30px;">
-                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l-7 3.5v7l7 3.5 7-3.5v-7L12 2z"></path><path d="M12 15.5L5 12V6.5l7 3.5"></path><path d="M12 15.5L19 12V6.5l-7 3.5"></path><path d="M12 15.5v7"></path></svg>
+                </div>
                 <div class="instructor-credentials">
                     <div class="credential-item">
                         <h4>학력</h4>
-                        <p><span class="text-highlight">**서울대학교 법과대학 졸업**</span><br>논리적 사고·체계적 학습법 전문가</p>
+                        <p><span class="text-highlight">서울대학교 법과대학 졸업</span><br>논리적 사고·체계적 학습법 전문가</p>
                     </div>
                     <div class="credential-item">
                         <h4>경력</h4>
-                        <p><span class="text-highlight">15년 입시 지도 경력</span><br>**서울대 & 의대 100+ 합격 배출**<br>**수능 전국 수석 배출**</p>
+                        <p><span class="text-highlight">15년 입시 지도 경력</span><br><span class="text-highlight">서울대 & 의대 100+ 합격 배출</span><br><span class="text-highlight">수능 전국 수석 배출</span></p>
                     </div>
                     <div class="credential-item">
                         <h4>주요 이력</h4>
@@ -587,13 +716,60 @@
     <div class="section results-section">
         <div class="container">
             <h2 class="section-title"><span class="text-highlight">검증된 결과</span>가 실력을 증명합니다</h2>
+            <p class="section-subtitle"><span class="text-highlight">15년 입시 지도 경력</span>, <span class="text-highlight">수능 전국 수석 배출</span>의 노하우는<br>결국 <span class="text-highlight">학생 한 명 한 명의 변화</span>에서 나옵니다.</p>
+            
+            <div class="results-box">
+                <h3>IVY ENGLISH의 약속</h3>
+                <p>단순히 성적을 올리는 것을 넘어, <span class="text-highlight">학생 스스로 학습의 주체가 되도록 코칭</span>하여<br>어떤 환경에서도 <span class="text-highlight">최상위권 실력</span>을 유지하게 만듭니다.</p>
+            </div>
+            
+            <div class="success-list-container">
+                <h3 class="list-title">주요 <span class="text-highlight">합격생 명단</span> (20XX-20YY)</h3>
+                <div class="name-list-grid">
+    <div class="section results-section">
+        <div class="container">
+            <h2 class="section-title">검증된 결과가 실력을 증명합니다</h2>
+            <p class="section-subtitle">서울대 및 의대 합격자들<br>이것이 IVY ENGLISH의 답입니다</p>
+            
+            <div class="results-grid">
+                <div class="results-box">
+                    <h3>서울대 합격자 명단 (일부, 가나다 순)</h3>
+                    <div class="name-list">
+                        강동훈, 강민령, 강정훈, 강지홍, 강진혁, 고기호, 고성환, 고수림, 고용준, 고호산, 곽윤아, 곽진명, 김도현, 김두호, 김리은, 김병진, 김수헌, 김영비, 김용인, 김유민, 김지혜, 김태우, 김태현, 김태형, 김형규, 김혜수, 문경일, 박수창, 박재영, 변광범, 변재휘, 변준혁, 변철식, 부기홍, 서정규, 손세영, 송무균, 양다희, 양병헌, 양웅규, 양정원, 오승리, 오승탁, 유청기, 이경제, 이명근, 이은래, 이재영, 임승찬, 진주환, 정문주, 한승지, 한승헌, 홍수진, 홍승희
+                    </div>
+                </div>
+                
+                <div class="results-box">
+                    <h3>의대 합격자 명단 (일부, 가나다 순)</h3>
+                    <div class="medical-list">
+                        고기호 (연세대 의대), 고성은 (고려대 의대)<br>
+                        고성환 (서울대 치대), 권나연 (경북대 의대)<br>
+                        김도현 (순천향대 의대), 김미라 (인제대 의대)<br>
+                        김지원 (경북대 의대), 김지혜 (연세대 의대)<br>
+                        김혜수 (서울대 의대), 나승관 (순천향대 의대)<br>
+                        나유경 (전남대 의대), 박경찬 (경북대 의대)<br>
+                        박수림 (연세대 의대), 박신영 (영남대 의대)<br>
+                        배소연 (연세대 의대), 백지명 (영남대 의대)<br>
+                        변준혁 (서울대 의대), 변형준 (원광대 의대)<br>
+                        부기홍 (서울대 의대), 부준혁 (고려대 의대)<br>
+                        안상준 (인제대 의대), 양제헌 (원광대 의대)<br>
+                        이형안 (건양대 의대), 황은석 (영남대 의대)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                </div>
+            </div>
             </div>
     </div>
 
     <div class="cta-section">
         <div class="container">
             <div class="icon-wrapper" style="margin-bottom: 30px;">
-                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
             <h2>지금 시작하지 않으면<br><span class="text-highlight">36명의 기회</span>는 사라집니다</h2>
             <p style="font-style: italic;">"한 명 한 명의 잠재력을 최대치로 끌어올리는 것이 IVY ENGLISH의 목표입니다."</p>
             <p>총 <span class="text-highlight">36명 한정</span> (9개 클래스 × 4명)</p>
