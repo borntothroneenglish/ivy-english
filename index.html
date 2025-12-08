@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IVY ENGLISH - 부산 용호동 프리미엄 4인 정원 영어 교습소</title>
     <style>
+        /* 기존 CSS 유지 */
         * {
             margin: 0;
             padding: 0;
@@ -553,11 +554,15 @@
             opacity: 0.9;
         }
         
-        .contact-item p {
-            font-size: 1.6em;
-            font-weight: 700;
+        /* CTA 전화번호 강조를 위한 스타일 */
+        .contact-item p.phone-number {
+            font-size: 2em; /* 폰트 크기 확대 */
+            font-weight: 900;
+            color: #ffd700; /* 강조 색상 적용 */
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
         }
-        
+        /* /CTA 전화번호 강조를 위한 스타일 */
+
         .cta-button {
             display: inline-block;
             background: white;
@@ -768,7 +773,12 @@
             .contact-item p {
                 font-size: 1.4em;
             }
-            
+            /* 모바일에서도 전화번호 강조 유지 */
+            .contact-item p.phone-number {
+                font-size: 1.8em;
+            }
+            /* /모바일에서도 전화번호 강조 유지 */
+
             .cta-button {
                 padding: 18px 40px;
                 font-size: 1.1em;
@@ -779,13 +789,12 @@
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h1>왜 최상위권 학생들은<br>4인 정원 소수 과외를 선택하는가?</h1>
+            <h1>부산 용호동, 당신의 자녀가<br>'최상위 1%'가 되는 입시 로드맵</h1>
             <p class="subtitle">서울대 출신 원장의 15년 입시 코칭 노하우</p>
             <div class="highlight">
-                총 36명 한정, 단 9개 클래스에서만 경험할 수 있습니다
+                **[마감 임박]** 총 36명 한정, 단 9개 클래스에서만 경험할 수 있습니다
             </div>
             <div class="stats">
                 <div class="stat-item">
@@ -804,10 +813,9 @@
         </div>
     </div>
 
-    <!-- Problem Section -->
     <div class="section problem-section">
         <div class="container">
-            <h2 class="section-title">왜 학원을 다녀도 성적이 오르지 않을까?</h2>
+            <h2 class="section-title">왜 학원을 다녀도 '진짜 실력'이 오르지 않을까?</h2>
             <p class="section-subtitle">대부분의 학생과 학부모가 겪는 3가지 구조적 문제</p>
             
             <div class="problem-cards">
@@ -824,7 +832,7 @@
                             <line x1="20" y1="20" x2="80" y2="80" stroke="#e74c3c" stroke-width="4"/>
                         </svg>
                     </div>
-                    <h3>① 대형 학원의 한계</h3>
+                    <h3>① 대형 학원의 '방치 학습'</h3>
                     <p>20~30명 이상의 학생을 한 번에 가르치다 보니 개별 학생의 취약점을 파악하고 해결할 시간이 부족합니다. 결국 '평균적인 학생'을 위한 수업이 되고, 개인의 성장은 뒤처집니다.</p>
                 </div>
                 
@@ -838,7 +846,7 @@
                             <circle cx="65" cy="65" r="4" fill="#e74c3c"/>
                         </svg>
                     </div>
-                    <h3>② 임시방편 학습법</h3>
+                    <h3>② 시험 요령만 늘어나는 함정</h3>
                     <p>단기 성적 향상에만 집중하여 문제 유형 암기와 요령만 가르치면, 응용력이 떨어져 상위권 진입에 실패합니다. 진짜 실력이 아닌 '시험 기술'만 늘어나는 함정에 빠집니다.</p>
                 </div>
                 
@@ -851,14 +859,13 @@
                             <line x1="65" y1="80" x2="50" y2="90" stroke="#e74c3c" stroke-width="3"/>
                         </svg>
                     </div>
-                    <h3>③ 동기부여 부족</h3>
+                    <h3>③ 의지력이 아닌 '공부 체력' 부족</h3>
                     <p>의지력만으로 공부하면 금방 지치고, 공부 습관이 형성되지 않아 장기적 성장이 어렵습니다. 결국 시간과 비용만 소모하고 목표에 도달하지 못합니다.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Solution Section -->
     <div class="section solution-section">
         <div class="container">
             <h2 class="section-title">IVY ENGLISH는 다릅니다</h2>
@@ -880,7 +887,6 @@
         </div>
     </div>
 
-    <!-- Principles Section -->
     <div class="section">
         <div class="container">
             <h2 class="section-title">입시 제도가 바뀌어도 흔들리지 않는 4가지 원칙</h2>
@@ -926,7 +932,6 @@
         </div>
     </div>
 
-    <!-- Why 4 Students Section -->
     <div class="section why-4-section">
         <div class="container">
             <h2 class="section-title">왜 4인 정원인가?</h2>
@@ -969,7 +974,6 @@
         </div>
     </div>
 
-    <!-- Curriculum Section -->
     <div class="section curriculum-section">
         <div class="container">
             <h2 class="section-title">체계적인 9개 클래스 로드맵</h2>
@@ -1034,7 +1038,6 @@
         </div>
     </div>
 
-    <!-- Instructor Section -->
     <div class="section instructor-section">
         <div class="container">
             <h2 class="section-title">누가 가르치는가?</h2>
@@ -1042,11 +1045,11 @@
                 <div class="instructor-credentials">
                     <div class="credential-item">
                         <h4>학력</h4>
-                        <p>서울대학교 법과대학 졸업<br>논리적 사고·체계적 학습법 전문가</p>
+                        <p>**서울대학교 법과대학 졸업**<br>논리적 사고·체계적 학습법 전문가</p>
                     </div>
                     <div class="credential-item">
                         <h4>경력</h4>
-                        <p>15년 입시 지도 경력<br>명문대 100+ 합격 배출<br>수능 전국 수석 배출</p>
+                        <p>15년 입시 지도 경력<br>**서울대 & 의대 100+ 합격 배출**<br>**수능 전국 수석 배출**</p>
                     </div>
                     <div class="credential-item">
                         <h4>주요 이력</h4>
@@ -1061,7 +1064,6 @@
         </div>
     </div>
 
-    <!-- Results Section -->
     <div class="section results-section">
         <div class="container">
             <h2 class="section-title">검증된 결과가 실력을 증명합니다</h2>
@@ -1071,7 +1073,17 @@
                 <div class="results-box">
                     <h3>서울대 합격자 명단 (일부, 가나다 순)</h3>
                     <div class="name-list">
-                        강동훈, 강민령, 강정훈, 강지홍, 강진혁, 고기호, 고성환, 고수림, 고용준, 고호산, 곽윤아, 곽진명, 김도현, 김두호, 김리은, 김병진, 김수헌, 김영비, 김용인, 김유민, 김지혜, 김태우, 김태현, 김태형, 김형규, 김혜수, 문경일, 박수창, 박재영, 변광범, 변재휘, 변준혁, 변철식, 부기홍, 서정규, 손세영, 송무균, 양다희, 양병헌, 양웅규, 양정원, 오승리, 오승탁, 유청기, 이경제, 이명근, 이은래, 이재영, 임승찬, 진주환, 정문주, 한승지, 한승헌, 홍수진, 홍승희
+                        강동훈, 강민령, 강정훈, 강지홍, 강진혁, <br>
+						고기호, 고성환, 고수림, 고용준, 고호산, <br>
+						곽윤아, 곽진명, 김도현, 김두호, 김리은, <br>
+						김병진, 김수헌, 김영비, 김용인, 김유민, <br>
+						김지혜, 김태우, 김태현, 김태형, 김형규, <br>
+						김혜수, 문경일, 박수창, 박재영, 변광범, <br>
+						변재휘, 변준혁, 변철식, 부기홍, 서정규, <br>
+						손세영, 송무균, 양다희, 양병헌, 양웅규, <br>
+						양정원, 오승리, 오승탁, 유청기, 이경제, <br>
+						이명근, 이은래, 이재영, 임승찬, 진주환, <br>
+						정문주, 한승지, 한승헌, 홍수진, 홍승희
                     </div>
                 </div>
                 
@@ -1096,7 +1108,6 @@
         </div>
     </div>
 
-    <!-- CTA Section -->
     <div class="cta-section">
         <div class="container">
             <div class="icon-wrapper" style="margin-bottom: 30px;">
@@ -1107,6 +1118,7 @@
                 </svg>
             </div>
             <h2>지금 시작하지 않으면<br>36명의 기회는 사라집니다</h2>
+            <p style="font-style: italic;">"한 명 한 명의 잠재력을 최대치로 끌어올리는 것이 IVY ENGLISH의 목표입니다."</p>
             <p>총 36명 한정 (9개 클래스 × 4명)</p>
             <p>4인 정원이 마감되면 대기 명단에 등록됩니다</p>
             
@@ -1123,7 +1135,7 @@
                         <rect x="35" y="45" width="30" height="20" rx="3" fill="none" stroke="white" stroke-width="2"/>
                     </svg>
                     <h3>전화 상담</h3>
-                    <p>010-3564-3153</p>
+                    <p class="phone-number">010-3564-3153</p>
                 </div>
                 <div class="contact-item">
                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px; margin-bottom: 15px;">
