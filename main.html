@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVY ENGLISH - 부산 용호동 프리미엄 4인 정원 영어 교습소</title>
+    <style>
+        /* ======================================================================
+        | 기본 설정
+        ====================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 20px;
+        }
+
+        /* 텍스트 강조를 위한 클래스 */
+        .text-highlight {
+            color: #ffd700; /* 황금색 강조 */
+            font-weight: 700;
+        }
+        
+        /* ======================================================================
+        | ICON & UTILITY
+        ====================================================================== */
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+        }
+        
+        .small-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+        }
+        
+        /* 섹션 타이틀 공통 스타일 */
+        .section-title {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #1e3c72;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 60px;
+            line-height: 1.8;
+        }
+
+        /* ======================================================================
+        | HERO 섹션 (배경 이미지 적용 및 모바일 최적화)
+        ====================================================================== */
+        .hero {
+            /* [수정] 배경 이미지 설정 */
+            background-image: url('snu.png'); /* 이미지 경로: snu.png */
+            background-size: cover; /* 이미지가 섹션을 꽉 채우도록 설정 */
+            background-position: center center; /* 이미지를 중앙에 배치 */
+            background-repeat: no-repeat;
+            
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px; /* 모바일에서 적당한 높이 유지 */
+            display: flex;
+            align-items: center; /* 텍스트를 수직 중앙에 배치 */
+            justify-content: center;
+        }
+        
+        /* [추가] 배경 위에 어두운 오버레이 추가 (텍스트 가독성 확보) */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* 짙은 검은색 오버레이 */
+            z-index: 0; /* 내용 아래에 위치 */
+        }
+        
+        /* 기존의 장식용 ::before, ::after 제거 */
+        /* hero 텍스트 내용이 오버레이 위에 오도록 설정 */
+        .hero h1, .hero .subtitle, .hero .highlight, .hero .stats, .hero .container {
+            position: relative;
+            z-index: 1; 
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        
+        .hero .highlight {
+            font-size: 1.1em;
+            background: rgba(255,255,255,0.25); /* 오버레이에 맞춰 투명도 조정 */
+            padding: 20px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+        
+        /* 배경 이미지 사용으로 .stat-item::before 장식 제거 */
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        /* ======================================================================
+        | Problem Section (문제점)
+        ====================================================================== */
+        .problem-section {
+            background: #f8f9fa;
+        }
+        
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #800040 0%, #58002d 100%);
+            border-radius: 12px 0 0 12px;
+        }
+        
+        .problem-card h3 {
+            color: #800040;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        
+        .problem-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* 문제점 섹션 SVG 아이콘 색상 */
+        .problem-card svg circle, .problem-card svg line, .problem-card svg path {
+            stroke: #800040;
+            fill: #800040;
+        }
+        .problem-card svg path[fill="none"] {
+            fill: none;
+        }
+        
+        /* ======================================================================
+        | Solution Section (해결책)
+        ====================================================================== */
+        .solution-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-section .section-title {
+            color: white;
+        }
+        
+        .solution-box {
+            background: rgba(255,255,255,0.15);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-top: 30px;
+        }
+        
+        .solution-box h3 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+        
+        .solution-box p {
+            font-size: 1.15em;
+            line-height: 1.9;
+        }
+
+        /* ======================================================================
+        | Principles Section (4가지 원칙)
+        ====================================================================== */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .principle-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .principle-number {
+            /* 기존 스타일 유지 */
+        }
+        
+        .principle-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+        
+        .principle-example {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #2c5aa0;
+            font-weight: 500;
+        }
+
+        /* ======================================================================
+        | Why 4 Section (4인 정원)
+        ====================================================================== */
+        .why-4-section {
+            background: #fff8f0;
+        }
+        
+        .comparison-card {
+            /* 기존 스타일 유지 */
+        }
+
+        /* ======================================================================
+        | Curriculum Section (커리큘럼)
+        ====================================================================== */
+        .curriculum-section {
+            background: #f8f9fa;
+        }
+        
+        /* ======================================================================
+        | Instructor Section (강사 소개)
+        ====================================================================== */
+        .instructor-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+        
+        .instructor-section .section-title {
+            color: white;
+        }
+        
+        .credential-item h4 {
+            color: #ffd700; /* 황금색으로 강조 */
+        }
+
+        /* ======================================================================
+        | Results Section (결과)
+        ====================================================================== */
+        .results-box h3 {
+            color: #1e3c72;
+        }
+
+        /* ======================================================================
+        | CTA Section (콜투액션)
+        ====================================================================== */
+        .cta-section {
+            background: linear-gradient(135deg, #1e272e 0%, #203a43 100%);
+        }
+        
+        .contact-item p {
+            color: #ffd700;
+        }
+        
+        .cta-button {
+            color: #1e3c72;
+        }
+        
+        .cta-button svg path {
+            fill: #1e3c72;
+        }
+        
+        /* ======================================================================
+        | 미디어 쿼리 (모바일 최적화)
+        ====================================================================== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 15px;
+                min-height: 450px; /* 모바일에서 최소 높이 조정 */
+            }
+            
+            .hero h1 {
+                font-size: 1.8em; /* 폰트 크기 조정 */
+                line-height: 1.4;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .stats {
+                gap: 15px;
+                margin-top: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2em;
+            }
+            
+            .stat-label {
+                font-size: 0.85em;
+            }
+            
+            .section {
+                padding: 50px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.7em;
+                line-height: 1.4;
+            }
+            
+            .name-list {
+                column-count: 1;
+                font-size: 0.9em;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button {
+                width: 100%;
+            }
+            /* ... 나머지 미디어 쿼리 코드 유지 ... */
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>부산 용호동, 당신의 자녀가<br>'<span class="text-highlight">최상위 1%</span>'가 되는 입시 로드맵</h1>
+            <p class="subtitle"><span class="text-highlight">서울대 출신 원장</span>의 <span class="text-highlight">15년 입시 코칭 노하우</span></p>
+            <div class="highlight">
+                **[마감 임박]** 총 36명 한정, 단 9개 클래스에서만 경험할 수 있습니다
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label"><span class="text-highlight">서울대 & 의대 합격</span></span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15년</span>
+                    <span class="stat-label">입시 지도 경력</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">수석</span>
+                    <span class="stat-label"><span class="text-highlight">수능 전국 수석 배출</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section problem-section">
+        <div class="container">
+            <h2 class="section-title">왜 학원을 다녀도 '진짜 실력'이 오르지 않을까?</h2>
+            <p class="section-subtitle">대부분의 학생과 학부모가 겪는 3가지 구조적 문제</p>
+            
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <div class="icon-wrapper">
+                        </div>
+                    <h3>① 대형 학원의 '방치 학습'</h3>
+                    <p>20~30명 이상의 학생을 한 번에 가르치다 보니 개별 학생의 <span class="text-highlight">취약점을 파악하고 해결할 시간이 부족</span>합니다. 결국 '평균적인 학생'을 위한 수업이 되고, 개인의 성장은 뒤처집니다.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="icon-wrapper">
+                        </div>
+                    <h3>② 시험 요령만 늘어나는 함정</h3>
+                    <p>단기 성적 향상에만 집중하여 <span class="text-highlight">문제 유형 암기와 요령만 가르치면</span>, 응용력이 떨어져 상위권 진입에 실패합니다. 진짜 실력이 아닌 '시험 기술'만 늘어나는 함정에 빠집니다.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="icon-wrapper">
+                        </div>
+                    <h3>③ 의지력이 아닌 '공부 체력' 부족</h3>
+                    <p>의지력만으로 공부하면 금방 지치고, <span class="text-highlight">공부 습관이 형성되지 않아</span> 장기적 성장이 어렵습니다. 결국 시간과 비용만 소모하고 목표에 도달하지 못합니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section solution-section">
+        <div class="container">
+            <h2 class="section-title">IVY ENGLISH는 다릅니다</h2>
+            <div class="solution-box">
+                <div class="icon-wrapper" style="margin-bottom: 30px;">
+                    </div>
+                <h3><span class="text-highlight">4인 정원 소수 정예</span> 시스템</h3>
+                <p>각 학생의 학습 상태를 <span class="text-highlight">정확히 진단</span>하고,<br>논리적 사고력과 공부 습관을 함께 길러<br>지속 가능한 성장을 만듭니다</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">입시 제도가 바뀌어도 흔들리지 않는 <span class="text-highlight">4가지 원칙</span></h2>
+            <p class="section-subtitle">IVY ENGLISH는 단순한 성적 향상이 아닌, 학생의 <span class="text-highlight">잠재력 최대치 도달</span>을 목표로<br>공부 태도와 습관 개선에 집중합니다</p>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-number">1</div>
+                    <h3>Learning is Easy<br>기본부터 <span class="text-highlight">탄탄하게</span></h3>
+                    <p>어려운 내용도 <span class="text-highlight">기본 원리부터 차근차근</span> 가르치면 누구나 이해할 수 있습니다. 쉽게 배우는 경험이 쌓이면 자연스럽게 학습에 대한 자신감과 재미가 생깁니다.</p>
+                    <div class="principle-example">
+                        실제 사례: 중학교 때 영어를 포기했던 학생이 기초 문법부터 다시 시작해 고3 때 1등급을 받고 서울대 합격
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">2</div>
+                    <h3>Learning is an Image<br><span class="text-highlight">전체 구조</span>를 파악하라</h3>
+                    <p>단편적인 지식 암기가 아닌, 학습 내용 <span class="text-highlight">전체의 구조적 이미지</span>를 형성해야 합니다. 큰 그림을 보면 세부 내용의 위치와 연결 관계를 이해하게 되어 응용력이 극대화됩니다.</p>
+                    <div class="principle-example">
+                        핵심 방법: 영문법 전체 체계도를 먼저 익히고, 각 문법 항목이 어떻게 연결되는지 이해하는 메타 학습
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">3</div>
+                    <h3>Learning is a Logic<br><span class="text-highlight">논리</span>로 이해하고 효율적으로 암기하라</h3>
+                    <p><span class="text-highlight">논리와 원리</span>를 먼저 이해하면 적은 노력으로도 오래 기억할 수 있고, 새로운 문제에도 스스로 해결 방법을 찾을 수 있습니다.</p>
+                    <div class="principle-example">
+                        학습 효과: 암기량은 1/3로 줄이고, 문제 해결 속도는 2배 향상되는 고효율 학습 실현
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">4</div>
+                    <h3>Learning is a Habit<br><span class="text-highlight">의지력이 아닌 습관</span>으로</h3>
+                    <p>공부를 습관화하면 의지력 소모 없이도 자동으로 학습이 진행되어, <span class="text-highlight">지속 가능한 성장</span>과 장기적 성취가 가능해집니다.</p>
+                    <div class="principle-example">
+                        습관 형성: 6개월 집중 코칭으로 자기주도 학습 루틴 완성, 이후 평생 활용 가능한 공부 시스템 확립
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section why-4-section">
+        <div class="container">
+            <h2 class="section-title">왜 <span class="text-highlight">4인 정원</span>인가?</h2>
+            <p class="section-subtitle">1:1 과외와 대형 학원의 장점만을 결합한 <span class="text-highlight">최적의 학습 환경</span></p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="small-icon">
+                        </div>
+                    <h3>1:1 과외보다 효과적</h3>
+                    <ul>
+                        <li>다른 학생의 질문을 들으며 <span class="text-highlight">사각지대 학습</span></li>
+                        <li>동료 학습자와의 건강한 <span class="text-highlight">경쟁으로 동기부여</span></li>
+                        <li>설명하며 배우는 <span class="text-highlight">메타인지 학습</span> 가능</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card">
+                    <div class="small-icon">
+                        </div>
+                    <h3>대형 학원보다 밀착</h3>
+                    <ul>
+                        <li>매 수업마다 <span class="text-highlight">개인별 진도 체크</span></li>
+                        <li>취약점 발견 즉시 <span class="text-highlight">맞춤형 보완 학습</span></li>
+                        <li>학습 태도와 습관까지 <span class="text-highlight">1:1 코칭</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section curriculum-section">
+        </div>
+
+    <div class="section instructor-section">
+        <div class="container">
+            <h2 class="section-title">누가 가르치는가?</h2>
+            <div class="instructor-content">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    </div>
+                <div class="instructor-credentials">
+                    <div class="credential-item">
+                        <h4>학력</h4>
+                        <p><span class="text-highlight">**서울대학교 법과대학 졸업**</span><br>논리적 사고·체계적 학습법 전문가</p>
+                    </div>
+                    <div class="credential-item">
+                        <h4>경력</h4>
+                        <p><span class="text-highlight">15년 입시 지도 경력</span><br>**서울대 & 의대 100+ 합격 배출**<br>**수능 전국 수석 배출**</p>
+                    </div>
+                    <div class="credential-item">
+                        <h4>주요 이력</h4>
+                        <p>Gosi Campus 대표<br>Mentor Academy 공동 원장<br>Top Academy 원장</p>
+                    </div>
+                </div>
+                <div class="instructor-quote">
+                    "명문대 합격생의 <span class="text-highlight">공부 습관과 마인드</span>를 심어주어,<br>
+                    학생의 잠재력 최대치에 도달하게 이끌겠습니다."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section results-section">
+        <div class="container">
+            <h2 class="section-title"><span class="text-highlight">검증된 결과</span>가 실력을 증명합니다</h2>
+            </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="container">
+            <div class="icon-wrapper" style="margin-bottom: 30px;">
+                </div>
+            <h2>지금 시작하지 않으면<br><span class="text-highlight">36명의 기회</span>는 사라집니다</h2>
+            <p style="font-style: italic;">"한 명 한 명의 잠재력을 최대치로 끌어올리는 것이 IVY ENGLISH의 목표입니다."</p>
+            <p>총 <span class="text-highlight">36명 한정</span> (9개 클래스 × 4명)</p>
+            <p>4인 정원이 마감되면 대기 명단에 등록됩니다</p>
+            
+            <div class="urgency-text">
+                상담은 예약제로 진행됩니다<br>
+                지금 바로 상담 신청하기
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>전화 상담</h3>
+                    <p><span class="text-highlight">010-3564-3153</span></p>
+                </div>
+                <div class="contact-item">
+                    <h3>상담 시간</h3>
+                    <p>평일 14:00 - 22:00</p>
+                </div>
+            </div>
+            
+            <a href="tel:010-3564-3153" class="cta-button">
+                지금 전화 상담 신청
+            </a>
+            
+            <div style="margin-top: 50px; font-size: 1.1em; opacity: 0.9;">
+                <p style="margin-bottom: 10px;"><strong>학원 위치</strong></p>
+                <p>부산 남구 동명로 빌리브센트로 A동 226호</p>
+                <p>IVY ENGLISH</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
