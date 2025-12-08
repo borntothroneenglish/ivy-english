@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVY ENGLISH - 부산 용호동 프리미엄 4인 정원 영어 교습소</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #fff;
+            overflow-x: hidden;
+        }
+        
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+        }
+        
+        .small-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero .highlight {
+            font-size: 1.1em;
+            background: rgba(255,255,255,0.15);
+            padding: 20px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+        
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #1e3c72;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 60px;
+            line-height: 1.8;
+        }
+        
+        .problem-section {
+            background: #f8f9fa;
+        }
+        
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+            border-radius: 12px 0 0 12px;
+        }
+        
+        .problem-card h3 {
+            color: #e74c3c;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        
+        .problem-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .solution-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .solution-section .section-title {
+            color: white;
+        }
+        
+        .solution-box {
+            background: rgba(255,255,255,0.15);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-top: 30px;
+        }
+        
+        .solution-box h3 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+        
+        .solution-box p {
+            font-size: 1.15em;
+            line-height: 1.9;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .principle-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .principle-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(30,60,114,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .principle-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(30,60,114,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .principle-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+        
+        .principle-card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .principle-example {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #2c5aa0;
+            font-weight: 500;
+        }
+        
+        .why-4-section {
+            background: #fff8f0;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .comparison-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            border: 2px solid #ffd700;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 3px 15px rgba(255,215,0,0.2);
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255,215,0,0.3);
+        }
+        
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .comparison-card h3 {
+            font-size: 1.4em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+        
+        .comparison-card ul {
+            list-style: none;
+        }
+        
+        .comparison-card li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+        
+        .comparison-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: 700;
+        }
+        
+        .curriculum-section {
+            background: #f8f9fa;
+        }
+        
+        .curriculum-track {
+            margin-bottom: 50px;
+        }
+        
+        .track-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1e3c72;
+        }
+        
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .class-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #1e3c72;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+        
+        .class-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 12px;
+        }
+        
+        .class-desc {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .instructor-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+        
+        .instructor-section .section-title {
+            color: white;
+        }
+        
+        .instructor-content {
+            background: rgba(255,255,255,0.1);
+            padding: 50px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .instructor-credentials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .credential-item {
+            text-align: center;
+        }
+        
+        .credential-item h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        
+        .credential-item p {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        .instructor-quote {
+            font-size: 1.3em;
+            text-align: center;
+            font-style: italic;
+            margin-top: 30px;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            line-height: 1.8;
+        }
+        
+        .results-section {
+            background: white;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .results-box {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .results-box h3 {
+            font-size: 1.6em;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .name-list {
+            column-count: 2;
+            column-gap: 20px;
+            font-size: 0.95em;
+            line-height: 2;
+            color: #555;
+        }
+        
+        .medical-list {
+            font-size: 0.95em;
+            line-height: 2;
+            color: #555;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.3em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .urgency-text {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .contact-item p {
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #e74c3c;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.6em;
+                line-height: 1.4;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .hero .highlight {
+                font-size: 1em;
+                padding: 15px 20px;
+            }
+            
+            .stats {
+                gap: 15px;
+                margin-top: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2em;
+            }
+            
+            .stat-label {
+                font-size: 0.85em;
+            }
+            
+            .section {
+                padding: 50px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.6em;
+                line-height: 1.4;
+            }
+            
+            .section-subtitle {
+                font-size: 1em;
+                margin-bottom: 40px;
+            }
+            
+            .problem-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .problem-card {
+                padding: 25px;
+            }
+            
+            .problem-card h3 {
+                font-size: 1.2em;
+            }
+            
+            .solution-box {
+                padding: 25px;
+            }
+            
+            .solution-box h3 {
+                font-size: 1.3em;
+            }
+            
+            .solution-box p {
+                font-size: 1em;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .principle-card {
+                padding: 30px 20px;
+            }
+            
+            .principle-number {
+                width: 45px;
+                height: 45px;
+                line-height: 45px;
+                font-size: 1.3em;
+            }
+            
+            .principle-card h3 {
+                font-size: 1.2em;
+            }
+            
+            .principle-card p {
+                font-size: 0.95em;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .comparison-card {
+                padding: 25px;
+            }
+            
+            .comparison-card h3 {
+                font-size: 1.2em;
+            }
+            
+            .curriculum-track {
+                margin-bottom: 40px;
+            }
+            
+            .track-title {
+                font-size: 1.4em;
+            }
+            
+            .class-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .class-card {
+                padding: 25px;
+            }
+            
+            .class-name {
+                font-size: 1.2em;
+            }
+            
+            .instructor-content {
+                padding: 30px 20px;
+            }
+            
+            .instructor-credentials {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .instructor-quote {
+                font-size: 1.1em;
+                padding: 20px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .results-box {
+                padding: 25px;
+            }
+            
+            .results-box h3 {
+                font-size: 1.3em;
+            }
+            
+            .name-list {
+                column-count: 1;
+                font-size: 0.9em;
+            }
+            
+            .medical-list {
+                font-size: 0.9em;
+            }
+            
+            .cta-section {
+                padding: 50px 15px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.7em;
+                line-height: 1.4;
+            }
+            
+            .cta-section p {
+                font-size: 1.1em;
+            }
+            
+            .urgency-text {
+                font-size: 1.2em;
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .contact-item p {
+                font-size: 1.4em;
+            }
+            
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 1.1em;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>왜 최상위권 학생들은<br>4인 정원 소수 과외를 선택하는가?</h1>
+            <p class="subtitle">서울대 출신 원장의 15년 입시 코칭 노하우</p>
+            <div class="highlight">
+                총 36명 한정, 단 9개 클래스에서만 경험할 수 있습니다
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">서울대 & 의대 합격</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15년</span>
+                    <span class="stat-label">입시 지도 경력</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">수석</span>
+                    <span class="stat-label">수능 전국 수석 배출</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <div class="section problem-section">
+        <div class="container">
+            <h2 class="section-title">왜 학원을 다녀도 성적이 오르지 않을까?</h2>
+            <p class="section-subtitle">대부분의 학생과 학부모가 겪는 3가지 구조적 문제</p>
+            
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <circle cx="50" cy="50" r="45" fill="#ffe5e5" stroke="#e74c3c" stroke-width="2"/>
+                            <circle cx="30" cy="40" r="5" fill="#e74c3c"/>
+                            <circle cx="50" cy="40" r="5" fill="#e74c3c"/>
+                            <circle cx="70" cy="40" r="5" fill="#e74c3c"/>
+                            <circle cx="30" cy="60" r="5" fill="#e74c3c"/>
+                            <circle cx="50" cy="60" r="5" fill="#e74c3c"/>
+                            <circle cx="70" cy="60" r="5" fill="#e74c3c"/>
+                            <line x1="20" y1="20" x2="80" y2="80" stroke="#e74c3c" stroke-width="4"/>
+                        </svg>
+                    </div>
+                    <h3>① 대형 학원의 한계</h3>
+                    <p>20~30명 이상의 학생을 한 번에 가르치다 보니 개별 학생의 취약점을 파악하고 해결할 시간이 부족합니다. 결국 '평균적인 학생'을 위한 수업이 되고, 개인의 성장은 뒤처집니다.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <rect x="15" y="15" width="70" height="70" rx="8" fill="#ffe5e5" stroke="#e74c3c" stroke-width="2"/>
+                            <path d="M 30 35 L 45 50 L 30 65" stroke="#e74c3c" stroke-width="3" fill="none"/>
+                            <circle cx="65" cy="35" r="4" fill="#e74c3c"/>
+                            <circle cx="65" cy="50" r="4" fill="#e74c3c"/>
+                            <circle cx="65" cy="65" r="4" fill="#e74c3c"/>
+                        </svg>
+                    </div>
+                    <h3>② 임시방편 학습법</h3>
+                    <p>단기 성적 향상에만 집중하여 문제 유형 암기와 요령만 가르치면, 응용력이 떨어져 상위권 진입에 실패합니다. 진짜 실력이 아닌 '시험 기술'만 늘어나는 함정에 빠집니다.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <path d="M 30 35 Q 35 25 50 25 Q 65 25 70 35 Q 75 45 70 55 Q 65 65 50 70 Q 35 65 30 55 Q 25 45 30 35" fill="#ffe5e5" stroke="#e74c3c" stroke-width="2"/>
+                            <path d="M 50 70 L 50 90" stroke="#e74c3c" stroke-width="3"/>
+                            <line x1="35" y1="80" x2="50" y2="90" stroke="#e74c3c" stroke-width="3"/>
+                            <line x1="65" y1="80" x2="50" y2="90" stroke="#e74c3c" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3>③ 동기부여 부족</h3>
+                    <p>의지력만으로 공부하면 금방 지치고, 공부 습관이 형성되지 않아 장기적 성장이 어렵습니다. 결국 시간과 비용만 소모하고 목표에 도달하지 못합니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solution Section -->
+    <div class="section solution-section">
+        <div class="container">
+            <h2 class="section-title">IVY ENGLISH는 다릅니다</h2>
+            <div class="solution-box">
+                <div class="icon-wrapper" style="margin-bottom: 30px;">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+                        <circle cx="30" cy="40" r="8" fill="white"/>
+                        <circle cx="70" cy="40" r="8" fill="white"/>
+                        <circle cx="30" cy="60" r="8" fill="white"/>
+                        <circle cx="70" cy="60" r="8" fill="white"/>
+                        <path d="M 50 25 L 55 35 L 45 35 Z" fill="#ffd700"/>
+                        <text x="50" y="54" font-size="12" fill="#667eea" text-anchor="middle" font-weight="bold">4인</text>
+                    </svg>
+                </div>
+                <h3>4인 정원 소수 정예 시스템</h3>
+                <p>각 학생의 학습 상태를 정확히 진단하고,<br>논리적 사고력과 공부 습관을 함께 길러<br>지속 가능한 성장을 만듭니다</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Principles Section -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">입시 제도가 바뀌어도 흔들리지 않는 4가지 원칙</h2>
+            <p class="section-subtitle">IVY ENGLISH는 단순한 성적 향상이 아닌, 학생의 잠재력 최대치 도달을 목표로<br>공부 태도와 습관 개선에 집중합니다</p>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-number">1</div>
+                    <h3>Learning is Easy<br>기본부터 탄탄하게</h3>
+                    <p>어려운 내용도 기본 원리부터 차근차근 가르치면 누구나 이해할 수 있습니다. 쉽게 배우는 경험이 쌓이면 자연스럽게 학습에 대한 자신감과 재미가 생깁니다.</p>
+                    <div class="principle-example">
+                        실제 사례: 중학교 때 영어를 포기했던 학생이 기초 문법부터 다시 시작해 고3 때 1등급을 받고 서울대 합격
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">2</div>
+                    <h3>Learning is an Image<br>전체 구조를 파악하라</h3>
+                    <p>단편적인 지식 암기가 아닌, 학습 내용 전체의 구조적 이미지를 형성해야 합니다. 큰 그림을 보면 세부 내용의 위치와 연결 관계를 이해하게 되어 응용력이 극대화됩니다.</p>
+                    <div class="principle-example">
+                        핵심 방법: 영문법 전체 체계도를 먼저 익히고, 각 문법 항목이 어떻게 연결되는지 이해하는 메타 학습
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">3</div>
+                    <h3>Learning is a Logic<br>논리로 이해하고 효율적으로 암기하라</h3>
+                    <p>무작정 외우면 쉽게 잊어버립니다. 논리와 원리를 먼저 이해하면 적은 노력으로도 오래 기억할 수 있고, 새로운 문제에도 스스로 해결 방법을 찾을 수 있습니다.</p>
+                    <div class="principle-example">
+                        학습 효과: 암기량은 1/3로 줄이고, 문제 해결 속도는 2배 향상되는 고효율 학습 실현
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">4</div>
+                    <h3>Learning is a Habit<br>의지력이 아닌 습관으로</h3>
+                    <p>의지력은 한정된 자원입니다. 공부를 습관화하면 의지력 소모 없이도 자동으로 학습이 진행되어, 지속 가능한 성장과 장기적 성취가 가능해집니다.</p>
+                    <div class="principle-example">
+                        습관 형성: 6개월 집중 코칭으로 자기주도 학습 루틴 완성, 이후 평생 활용 가능한 공부 시스템 확립
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why 4 Students Section -->
+    <div class="section why-4-section">
+        <div class="container">
+            <h2 class="section-title">왜 4인 정원인가?</h2>
+            <p class="section-subtitle">1:1 과외와 대형 학원의 장점만을 결합한 최적의 학습 환경</p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="small-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="#fff9e6" stroke="#ffd700" stroke-width="2"/>
+                            <path d="M 50 30 L 60 50 L 50 50 L 50 70" stroke="#ffd700" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <circle cx="35" cy="45" r="6" fill="#ffd700"/>
+                            <circle cx="65" cy="45" r="6" fill="#ffd700"/>
+                        </svg>
+                    </div>
+                    <h3>1:1 과외보다 효과적</h3>
+                    <ul>
+                        <li>다른 학생의 질문을 들으며 사각지대 학습</li>
+                        <li>동료 학습자와의 건강한 경쟁으로 동기부여</li>
+                        <li>설명하며 배우는 메타인지 학습 가능</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card">
+                    <div class="small-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="10" width="80" height="80" rx="8" fill="#fff9e6" stroke="#ffd700" stroke-width="2"/>
+                            <circle cx="50" cy="40" r="12" fill="#ffd700"/>
+                            <path d="M 35 70 Q 50 55 65 70" stroke="#ffd700" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>대형 학원보다 밀착</h3>
+                    <ul>
+                        <li>매 수업마다 개인별 진도 체크</li>
+                        <li>취약점 발견 즉시 맞춤형 보완 학습</li>
+                        <li>학습 태도와 습관까지 1:1 코칭</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Curriculum Section -->
+    <div class="section curriculum-section">
+        <div class="container">
+            <h2 class="section-title">체계적인 9개 클래스 로드맵</h2>
+            <p class="section-subtitle">초등부터 최상위 입시까지, 단계별 성장 경로를 명확히 제시합니다</p>
+            
+            <div class="curriculum-track">
+                <h3 class="track-title">초등부 (Elementary Division)</h3>
+                <p style="color: #555; margin-bottom: 25px;">기초부터 중등 진입까지의 성장 경로를 명확히 제시합니다</p>
+                <div class="class-grid">
+                    <div class="class-card">
+                        <div class="class-name">Pioneer Class</div>
+                        <div class="class-desc">영어 학습의 기본기 형성 및 즐거운 습관 만들기</div>
+                    </div>
+                    <div class="class-card">
+                        <div class="class-name">Starter Class</div>
+                        <div class="class-desc">필수 어휘/문장 구조 기본기 확립 및 독해력 향상</div>
+                    </div>
+                    <div class="class-card">
+                        <div class="class-name">Bridge Class</div>
+                        <div class="class-desc">중등 과정 연결을 위한 핵심 문법 및 고급 독해 훈련</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="curriculum-track">
+                <h3 class="track-title">중등부 (Middle School Division)</h3>
+                <p style="color: #555; margin-bottom: 25px;">내신 관리와 더불어 고등 입시의 논리적 사고력을 완성하는 데 초점을 맞춥니다</p>
+                <div class="class-grid">
+                    <div class="class-card">
+                        <div class="class-name">Core Class</div>
+                        <div class="class-desc">중등 핵심 문법/독해 완성 및 내신 기초 다지기</div>
+                    </div>
+                    <div class="class-card">
+                        <div class="class-name">Achieve Class</div>
+                        <div class="class-desc">심화 문법/어휘를 통한 내신 A등급/특목고 대비 집중 훈련</div>
+                    </div>
+                    <div class="class-card">
+                        <div class="class-name">Logic Class</div>
+                        <div class="class-desc">고등 과정 선행 및 논리적 사고력 강화로 응용력 극대화</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="curriculum-track">
+                <h3 class="track-title">고등부 (High School Division)</h3>
+                <p style="color: #555; margin-bottom: 25px;">최상위 입시 결과를 위한 체계적인 관리 및 실전 훈련에 중점을 둡니다</p>
+                <div class="class-grid">
+                    <div class="class-card">
+                        <div class="class-name">Focus Class</div>
+                        <div class="class-desc">내신 및 수능 기본기 집중 완성, 취약점 정밀 보완</div>
+                    </div>
+                    <div class="class-card">
+                        <div class="class-name">Mentor Class</div>
+                        <div class="class-desc">맞춤형 멘토링/학습 관리, 심층 분석을 통한 고득점 전략</div>
+                    </div>
+                    <div class="class-card">
+                        <div class="class-name">Elite 1% Class</div>
+                        <div class="class-desc">서울대/의대 목표 최상위 실전 훈련 및 수능 만점 전략</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructor Section -->
+    <div class="section instructor-section">
+        <div class="container">
+            <h2 class="section-title">누가 가르치는가?</h2>
+            <div class="instructor-content">
+                <div class="instructor-credentials">
+                    <div class="credential-item">
+                        <h4>학력</h4>
+                        <p>서울대학교 법과대학 졸업<br>논리적 사고·체계적 학습법 전문가</p>
+                    </div>
+                    <div class="credential-item">
+                        <h4>경력</h4>
+                        <p>15년 입시 지도 경력<br>명문대 100+ 합격 배출<br>수능 전국 수석 배출</p>
+                    </div>
+                    <div class="credential-item">
+                        <h4>주요 이력</h4>
+                        <p>Gosi Campus 대표<br>Mentor Academy 공동 원장<br>Top Academy 원장</p>
+                    </div>
+                </div>
+                <div class="instructor-quote">
+                    "명문대 합격생의 공부 습관과 마인드를 심어주어,<br>
+                    학생의 잠재력 최대치에 도달하게 이끌겠습니다."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="section results-section">
+        <div class="container">
+            <h2 class="section-title">검증된 결과가 실력을 증명합니다</h2>
+            <p class="section-subtitle">15년간 배출한 서울대 및 의대 합격자들<br>이것이 IVY ENGLISH의 답입니다</p>
+            
+            <div class="results-grid">
+                <div class="results-box">
+                    <h3>서울대 합격자 명단 (일부, 가나다 순)</h3>
+                    <div class="name-list">
+                        강동훈, 강민령, 강정훈, 강지홍, 강진혁, 고기호, 고성환, 고수림, 고용준, 고호산, 곽윤아, 곽진명, 김도현, 김두호, 김리은, 김병진, 김수헌, 김영비, 김용인, 김유민, 김지혜, 김태우, 김태현, 김태형, 김형규, 김혜수, 문경일, 박수창, 박재영, 변광범, 변재휘, 변준혁, 변철식, 부기홍, 서정규, 손세영, 송무균, 양다희, 양병헌, 양웅규, 양정원, 오승리, 오승탁, 유청기, 이경제, 이명근, 이은래, 이재영, 임승찬, 진주환, 정문주, 한승지, 한승헌, 홍수진, 홍승희
+                    </div>
+                </div>
+                
+                <div class="results-box">
+                    <h3>의대 합격자 명단 (일부, 가나다 순)</h3>
+                    <div class="medical-list">
+                        고기호 (연세대 의대), 고성은 (고려대 의대)<br>
+                        고성환 (서울대 치대), 권나연 (경북대 의대)<br>
+                        김도현 (순천향대 의대), 김미라 (인제대 의대)<br>
+                        김지원 (경북대 의대), 김지혜 (연세대 의대)<br>
+                        김혜수 (서울대 의대), 나승관 (순천향대 의대)<br>
+                        나유경 (전남대 의대), 박경찬 (경북대 의대)<br>
+                        박수림 (연세대 의대), 박신영 (영남대 의대)<br>
+                        배소연 (연세대 의대), 백지명 (영남대 의대)<br>
+                        변준혁 (서울대 의대), 변형준 (원광대 의대)<br>
+                        부기홍 (서울대 의대), 부준혁 (고려대 의대)<br>
+                        안상준 (인제대 의대), 양제헌 (원광대 의대)<br>
+                        이형안 (건양대 의대), 황은석 (영남대 의대)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="container">
+            <div class="icon-wrapper" style="margin-bottom: 30px;">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+                    <path d="M 50 30 L 50 50 L 65 50" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="50" cy="50" r="5" fill="white"/>
+                </svg>
+            </div>
+            <h2>지금 시작하지 않으면<br>36명의 기회는 사라집니다</h2>
+            <p>총 36명 한정 (9개 클래스 × 4명)</p>
+            <p>4인 정원이 마감되면 대기 명단에 등록됩니다</p>
+            
+            <div class="urgency-text">
+                상담은 예약제로 진행됩니다<br>
+                지금 바로 상담 신청하기
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px; margin-bottom: 15px;">
+                        <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+                        <path d="M 35 40 Q 50 55 65 40" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <rect x="35" y="45" width="30" height="20" rx="3" fill="none" stroke="white" stroke-width="2"/>
+                    </svg>
+                    <h3>전화 상담</h3>
+                    <p>010-3564-3153</p>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px; margin-bottom: 15px;">
+                        <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="25" fill="none" stroke="white" stroke-width="3"/>
+                        <line x1="50" y1="35" x2="50" y2="50" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="50" y1="50" x2="60" y2="55" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h3>상담 시간</h3>
+                    <p>평일 14:00 - 22:00</p>
+                </div>
+            </div>
+            
+            <a href="tel:010-3564-3153" class="cta-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; display: inline-block; vertical-align: middle; margin-right: 10px;">
+                    <path d="M 6 3 C 4.9 3 4 3.9 4 5 L 4 19 C 4 20.1 4.9 21 6 21 L 18 21 C 19.1 21 20 20.1 20 19 L 20 5 C 20 3.9 19.1 3 18 3 L 6 3 z M 8 8 L 16 8 L 16 10 L 8 10 L 8 8 z M 8 12 L 16 12 L 16 14 L 8 14 L 8 12 z M 8 16 L 13 16 L 13 18 L 8 18 L 8 16 z" fill="#e74c3c"/>
+                </svg>
+                지금 전화 상담 신청
+            </a>
+            
+            <div style="margin-top: 50px; font-size: 1.1em; opacity: 0.9;">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px; margin-bottom: 15px;">
+                    <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+                    <circle cx="50" cy="45" r="8" fill="white"/>
+                    <path d="M 50 55 L 50 75" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="50" cy="80" r="3" fill="white"/>
+                </svg>
+                <p style="margin-bottom: 10px;"><strong>학원 위치</strong></p>
+                <p>부산 남구 동명로 빌리브센트로 A동 226호</p>
+                <p>IVY ENGLISH</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
