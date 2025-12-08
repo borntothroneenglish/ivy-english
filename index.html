@@ -36,17 +36,17 @@
         .section { padding: 100px 0; }
         .section-gray { background-color: var(--bg-light); }
         
-        /* 타이틀 스타일 - 폰트 크기 조정 */
+        /* 타이틀 스타일 */
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-title {
-            font-size: 2.3rem; /* Reduced */
+            font-size: 2.5rem;
             font-weight: 900;
             color: var(--primary-dark);
             margin-bottom: 16px;
             letter-spacing: -1px;
         }
         .section-subtitle {
-            font-size: 1.1rem; /* Reduced */
+            font-size: 1.2rem;
             color: var(--text-light);
             font-weight: 400;
         }
@@ -83,7 +83,7 @@
         }
 
         .hero h1 {
-            font-size: 2.8rem; /* Reduced */
+            font-size: 3rem;
             font-weight: 900;
             line-height: 1.3;
             margin-bottom: 20px;
@@ -91,7 +91,7 @@
         }
 
         .hero p {
-            font-size: 1.3rem; /* Reduced */
+            font-size: 1.4rem;
             opacity: 0.9;
             margin-bottom: 40px;
             font-weight: 300;
@@ -117,7 +117,7 @@
         }
 
         .stat-box { text-align: center; }
-        .stat-num { font-size: 1.8rem; font-weight: 700; display: block; color: var(--accent-gold); } /* Reduced */
+        .stat-num { font-size: 2rem; font-weight: 700; display: block; color: var(--accent-gold); }
         .stat-desc { font-size: 1rem; opacity: 0.8; }
 
         /* ======================================================================
@@ -146,7 +146,16 @@
             color: var(--primary-dark);
         }
         
-        /* Note: card-num was removed from main2.html in previous steps. Keeping it out. */
+        .card-num {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #f1f2f6;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 0;
+            line-height: 1;
+        }
         
         .card-content { position: relative; z-index: 1; }
 
@@ -221,48 +230,6 @@
             color: #dfe6e9;
             min-width: 50px;
         }
-        
-        /* NEW CURRICULUM SECTION STYLE */
-        .division-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-        .division-box {
-            background: var(--bg-white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-blue);
-        }
-        .division-box h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        .class-list {
-            list-style: none;
-            padding: 0;
-        }
-        .class-item {
-            margin-bottom: 20px;
-        }
-        .class-item strong {
-            display: block;
-            font-size: 1.1rem; 
-            color: var(--primary-blue);
-            margin-bottom: 5px;
-        }
-        .class-item p {
-            font-size: 0.95rem; /* Slightly reduced */
-            line-height: 1.5;
-            color: var(--text-main);
-        }
-
 
         /* ======================================================================
         | 6. RESULTS (List)
@@ -292,6 +259,10 @@
         }
         
         .name-tag {
+            /* 모바일에서 3개씩 보이게 하기 위한 속성 추가 */
+            flex-grow: 0; 
+            flex-shrink: 0;
+            
             background: #f1f2f6;
             padding: 8px 16px;
             border-radius: 8px;
@@ -369,7 +340,12 @@
             .principles-grid { grid-template-columns: 1fr; }
             .instructor-box { flex-direction: column; text-align: center; }
             .section { padding: 60px 0; }
-            .division-grid { grid-template-columns: 1fr; }
+            
+            /* 수정된 부분: 모바일에서 이름 태그를 3개씩 배치 */
+            .name-tag {
+                flex-basis: calc((100% - 30px) / 3); /* 3 items per row with 15px gap */
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -390,7 +366,10 @@
                     <span class="stat-num">15년</span>
                     <span class="stat-desc">입시 지도 경력</span>
                 </div>
-                
+                <div class="stat-box">
+                    <span class="stat-num">1ST</span>
+                    <span class="stat-desc">수능 전국 수석 배출</span>
+                </div>
             </div>
         </div>
     </div>
@@ -537,71 +516,7 @@
             </div>
         </div>
     </div>
-    
-    <div class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">IVY ENGLISH 학년별 <span class="hl-blue">입시 로드맵</span></h2>
-                <p class="section-subtitle">초등 기초부터 최상위 입시 결과까지 이어지는 빈틈없는 커리큘럼</p>
-            </div>
-            
-            <div class="division-grid">
-                <div class="division-box">
-                    <h3>초등부</h3>
-                    <ul class="class-list">
-                        <li class="class-item">
-                            <strong>Pioneer Class</strong>
-                            <p>영어 학습의 기본기 형성 및 즐거운 습관 만들기</p>
-                        </li>
-                        <li class="class-item">
-                            <strong>Starter Class</strong>
-                            <p>필수 어휘/문장 구조 기본기 확립 및 독해력 향상</p>
-                        </li>
-                        <li class="class-item">
-                            <strong>Bridge Class</strong>
-                            <p>중등 과정 연결을 위한 핵심 문법 및 고급 독해 훈련</p>
-                        </li>
-                    </ul>
-                </div>
 
-                <div class="division-box">
-                    <h3>중등부</h3>
-                    <ul class="class-list">
-                        <li class="class-item">
-                            <strong>Core Class</strong>
-                            <p>중등 핵심 문법/독해 완성 및 내신 기초 다지기</p>
-                        </li>
-                        <li class="class-item">
-                            <strong>Achieve Class</strong>
-                            <p>심화 문법/어휘를 통한 내신 A등급/특목고 대비 집중 훈련</p>
-                        </li>
-                        <li class="class-item">
-                            <strong>Logic Class</strong>
-                            <p>고등 과정 선행 및 논리적 사고력 강화로 응용력 극대화</p>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="division-box">
-                    <h3>고등부</h3>
-                    <ul class="class-list">
-                        <li class="class-item">
-                            <strong>Focus Class</strong>
-                            <p>내신 및 수능 기본기 집중 완성, 취약점 정밀 보완</p>
-                        </li>
-                        <li class="class-item">
-                            <strong>Mentor Class</strong>
-                            <p>맞춤형 멘토링/학습 관리, 심층 분석을 통한 고득점 전략</p>
-                        </li>
-                        <li class="class-item">
-                            <strong>Elite 1% Class</strong>
-                            <p>서울대/의대 목표 최상위 실전 훈련 및 수능 만점 전략</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="section">
         <div class="container">
             <div class="section-header">
@@ -754,10 +669,11 @@
 
     <div class="cta-section section">
         <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">지금 시작하지 않으면<br><span class="hl-gold">36명의 기회</span>는 사라집니다</h2>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">지금 시작하지 않으면<br><span class="hl-gold">선택된 4명의 기회</span>는 사라집니다</h2>
             <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">
-                9개 클래스 × 4명 정원<br>
-                정원 마감 시 대기 명단에 등록됩니다.
+                9개 클래스 × 4명 정원 = 총 36명<br> 
+                정원 마감 시 대기 명단에 등록됩니다.<br>
+				1:1 멘토링을 해야하기에 그 이상 가르칠 수 없습니다.
             </p>
             
             <div style="background: rgba(255,255,255,0.1); display: inline-block; padding: 30px; border-radius: 15px; backdrop-filter: blur(5px);">
