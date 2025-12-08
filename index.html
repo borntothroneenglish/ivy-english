@@ -36,17 +36,17 @@
         .section { padding: 100px 0; }
         .section-gray { background-color: var(--bg-light); }
         
-        /* 타이틀 스타일 */
+        /* 타이틀 스타일 - 폰트 크기 조정 */
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.3rem; /* Reduced */
             font-weight: 900;
             color: var(--primary-dark);
             margin-bottom: 16px;
             letter-spacing: -1px;
         }
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Reduced */
             color: var(--text-light);
             font-weight: 400;
         }
@@ -83,7 +83,7 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem; /* Reduced */
             font-weight: 900;
             line-height: 1.3;
             margin-bottom: 20px;
@@ -91,7 +91,7 @@
         }
 
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.3rem; /* Reduced */
             opacity: 0.9;
             margin-bottom: 40px;
             font-weight: 300;
@@ -117,7 +117,7 @@
         }
 
         .stat-box { text-align: center; }
-        .stat-num { font-size: 2rem; font-weight: 700; display: block; color: var(--accent-gold); }
+        .stat-num { font-size: 1.8rem; font-weight: 700; display: block; color: var(--accent-gold); } /* Reduced */
         .stat-desc { font-size: 1rem; opacity: 0.8; }
 
         /* ======================================================================
@@ -146,16 +146,7 @@
             color: var(--primary-dark);
         }
         
-        .card-num {
-            font-size: 4rem;
-            font-weight: 900;
-            color: #f1f2f6;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 0;
-            line-height: 1;
-        }
+        /* Note: card-num was removed from main2.html in previous steps. Keeping it out. */
         
         .card-content { position: relative; z-index: 1; }
 
@@ -230,6 +221,48 @@
             color: #dfe6e9;
             min-width: 50px;
         }
+        
+        /* NEW CURRICULUM SECTION STYLE */
+        .division-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .division-box {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-blue);
+        }
+        .division-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .class-list {
+            list-style: none;
+            padding: 0;
+        }
+        .class-item {
+            margin-bottom: 20px;
+        }
+        .class-item strong {
+            display: block;
+            font-size: 1.1rem; 
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+        .class-item p {
+            font-size: 0.95rem; /* Slightly reduced */
+            line-height: 1.5;
+            color: var(--text-main);
+        }
+
 
         /* ======================================================================
         | 6. RESULTS (List)
@@ -336,6 +369,7 @@
             .principles-grid { grid-template-columns: 1fr; }
             .instructor-box { flex-direction: column; text-align: center; }
             .section { padding: 60px 0; }
+            .division-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -344,8 +378,8 @@
     <div class="hero">
         <div class="container">
             <div class="badge-limit">⚠️ 4인 정원 마감 임박</div>
-            <h1> 부산 용호동<br><span class="hl-gold"> 4인 정원<br> 프리미엄 영어 과외</span> </h1>
-            <p>"서울대 출신 원장이 15년 입시 지도 경력, 수능 전국 수석 배출의 노하우로 최상위 입시 로드맵을 제시합니다"</p>
+            <h1> 부산 용호동<br><span class="hl-gold"> 4인 정원 프리미엄 과외</span> 입시 전략</h1>
+            <p>"서울대 출신, 15년 입시 지도 경력, 수능 전국 수석 배출의 노하우로 최상위 입시 로드맵을 제시합니다"</p>
             
             <div class="stats-row">
                 <div class="stat-box">
@@ -506,7 +540,71 @@
             </div>
         </div>
     </div>
+    
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">IVY ENGLISH 학년별 <span class="hl-blue">입시 로드맵</span></h2>
+                <p class="section-subtitle">초등 기초부터 최상위 입시 결과까지 이어지는 빈틈없는 커리큘럼</p>
+            </div>
+            
+            <div class="division-grid">
+                <div class="division-box">
+                    <h3>초등부 (Elementary Division)</h3>
+                    <ul class="class-list">
+                        <li class="class-item">
+                            <strong>Pioneer Class</strong>
+                            <p>영어 학습의 기본기 형성 및 즐거운 습관 만들기</p>
+                        </li>
+                        <li class="class-item">
+                            <strong>Starter Class</strong>
+                            <p>필수 어휘/문장 구조 기본기 확립 및 독해력 향상</p>
+                        </li>
+                        <li class="class-item">
+                            <strong>Bridge Class</strong>
+                            <p>중등 과정 연결을 위한 핵심 문법 및 고급 독해 훈련</p>
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="division-box">
+                    <h3>중등부 (Middle School Division)</h3>
+                    <ul class="class-list">
+                        <li class="class-item">
+                            <strong>Core Class</strong>
+                            <p>중등 핵심 문법/독해 완성 및 내신 기초 다지기</p>
+                        </li>
+                        <li class="class-item">
+                            <strong>Achieve Class</strong>
+                            <p>심화 문법/어휘를 통한 내신 A등급/특목고 대비 집중 훈련</p>
+                        </li>
+                        <li class="class-item">
+                            <strong>Logic Class</strong>
+                            <p>고등 과정 선행 및 논리적 사고력 강화로 응용력 극대화</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="division-box">
+                    <h3>고등부 (High School Division)</h3>
+                    <ul class="class-list">
+                        <li class="class-item">
+                            <strong>Focus Class</strong>
+                            <p>내신 및 수능 기본기 집중 완성, 취약점 정밀 보완</p>
+                        </li>
+                        <li class="class-item">
+                            <strong>Mentor Class</strong>
+                            <p>맞춤형 멘토링/학습 관리, 심층 분석을 통한 고득점 전략</p>
+                        </li>
+                        <li class="class-item">
+                            <strong>Elite 1% Class</strong>
+                            <p>서울대/의대 목표 최상위 실전 훈련 및 수능 만점 전략</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="section">
         <div class="container">
             <div class="section-header">
