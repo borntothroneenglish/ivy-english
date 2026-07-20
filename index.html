@@ -473,6 +473,46 @@
         }
         
     }
+
+	/* 신문기사 바로가기 버튼 스타일 (애니메이션 효과 포함) */
+.press-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 14px 28px;
+  background: var(--ivy-deep);
+  color: #ffffff !important;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(27,32,51,0.15);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+/* 마우스 호버 시 화려하게 강조되는 효과 */
+.press-link-btn:hover {
+  background: var(--ivory);
+  color: var(--ivy-deep) !important;
+  border-color: var(--brass);
+  box-shadow: 0 6px 20px rgba(181,141,61,0.25);
+  transform: translateY(-2px);
+}
+
+/* 모바일 화면 맞춤 조절 */
+@media (max-width: 768px) {
+  .press-link-btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
 </style>
 </head>
 <body>
@@ -880,6 +920,14 @@
             <br>
             <a href="tel:010-5794-3153" class="cta-btn">지금 전화 상담</a>
         </div>
+    </div>
+
+	<div class="press-footer-banner">
+      <!-- 강조된 네이버 블로그 신문기사 링크 버튼 -->
+      <a href="https://blog.naver.com/rabbit3153/224352144616" target="_blank" rel="noopener noreferrer" class="press-link-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 2px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        언론 보도 신문기사 원문 전체보기
+      </a>
     </div>
 
 </body>
