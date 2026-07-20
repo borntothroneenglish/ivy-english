@@ -475,42 +475,44 @@
     }
 
 	/* 신문기사 바로가기 버튼 스타일 (애니메이션 효과 포함) */
+/* 신문기사 바로가기 버튼 - 초대형 골드 버전 */
 .press-link-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 14px 28px;
-  background: var(--ivy-deep);
+  gap: 10px;
+  margin-top: 24px;
+  padding: 18px 45px;          /* 크기를 대폭 확대 */
+  background: #b58d3d;          /* 흰색/그린 대신 시선을 사로잡는 골드 브래스 색상 */
   color: #ffffff !important;
   font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 17px;              /* 글자 크기 스케일 업 */
+  font-weight: 800;              /* 최고 두께로 강조 */
   text-decoration: none;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(27,32,51,0.15);
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(181, 141, 61, 0.4); /* 골드빛 입체 그림자 */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #b58d3d;
+  width: auto;
 }
 
-/* 마우스 호버 시 화려하게 강조되는 효과 */
+/* 마우스 호버 시 시각 효과 극대화 */
 .press-link-btn:hover {
-  background: var(--ivory);
-  color: var(--ivy-deep) !important;
-  border-color: var(--brass);
-  box-shadow: 0 6px 20px rgba(181,141,61,0.25);
-  transform: translateY(-2px);
+  background: #a37c33;          /* 조금 더 깊은 골드 톤으로 변형 */
+  border-color: #a37c33;
+  box-shadow: 0 8px 25px rgba(181, 141, 61, 0.6);
+  transform: translateY(-3px) scale(1.02); /* 살짝 커지면서 위로 떠오르는 효과 */
 }
 
-/* 모바일 화면 맞춤 조절 */
+/* 모바일 화면에서도 꽉 차고 묵직하게 보이도록 조절 */
 @media (max-width: 768px) {
   .press-link-btn {
+    display: flex;
     width: 100%;
     box-sizing: border-box;
-    padding: 12px 20px;
-    font-size: 13px;
+    padding: 16px 20px;
+    font-size: 15px;
   }
 }
 </style>
